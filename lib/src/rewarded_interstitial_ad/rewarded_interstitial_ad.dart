@@ -1,4 +1,4 @@
-import '../../../preload_google_ads.dart';
+import '../../preload_google_ads.dart';
 
 /// A singleton class to manage loading and showing rewarded ads.
 class RewardInterstitialAd {
@@ -11,7 +11,7 @@ class RewardInterstitialAd {
   RewardInterstitialAd._internal();
 
   RewardedInterstitialAd?
-  _rewardedInterstitialAd; // Stores the loaded rewarded interstitial ad.
+      _rewardedInterstitialAd; // Stores the loaded rewarded interstitial ad.
   bool _isRewardedInterstitialAdLoaded =
       false; // Flag to track if the rewarded ad is loaded.
   var counter =
@@ -27,9 +27,7 @@ class RewardInterstitialAd {
         rewardedInterstitialAdLoadCallback: RewardedInterstitialAdLoadCallback(
           // Called when the ad has successfully loaded.
           onAdLoaded: (ad) {
-            AdStats
-                .instance
-                .rewardedInterstitialLoad
+            AdStats.instance.rewardedInterstitialLoad
                 .value++; // Increment ad load count.
             AppLogger.log("Rewarded ad loaded.");
             _rewardedInterstitialAd = ad;
@@ -40,9 +38,7 @@ class RewardInterstitialAd {
           },
           // Called if the ad fails to load.
           onAdFailedToLoad: (LoadAdError error) {
-            AdStats
-                .instance
-                .rewardedInterstitialFailed
+            AdStats.instance.rewardedInterstitialFailed
                 .value++; // Increment ad load failure count.
             _rewardedInterstitialAd = null;
             _isRewardedInterstitialAdLoaded = false;
@@ -66,8 +62,8 @@ class RewardInterstitialAd {
           _rewardedInterstitialAd != null &&
           counter >= getRewardedCounter) {
         counter = 0; // Reset the counter after showing the ad.
-        _rewardedInterstitialAd!
-            .fullScreenContentCallback = FullScreenContentCallback(
+        _rewardedInterstitialAd!.fullScreenContentCallback =
+            FullScreenContentCallback(
           // Called when the ad is dismissed.
           onAdDismissedFullScreenContent: (ad) {
             callBack(ad: ad); // Callback after ad is dismissed.
