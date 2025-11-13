@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../preload_google_ads.dart';
 
 /// Singleton class responsible for managing all ad operations.

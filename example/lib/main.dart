@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:preload_google_ads/preload_google_ads.dart';
 
 void main() {
@@ -138,7 +139,7 @@ class _HomeViewState extends State<HomeView> {
     ad = SizedBox();
     adTypes = [
       AdTypList(onPressed: showOpenAppAd, title: "Show Open App AD"),
-      AdTypList(onPressed: showInterAd, title: "Show Interstitial AD"),
+      AdTypList(onPressed: showInterstitialAd, title: "Show Interstitial AD"),
       AdTypList(onPressed: showRewardedAd, title: "Show Rewarded AD"),
       AdTypList(onPressed: showMediumNativeAd, title: "Show Medium Native AD"),
       AdTypList(onPressed: showSmallNativeAd, title: "Show Small Native AD"),
@@ -165,13 +166,13 @@ class _HomeViewState extends State<HomeView> {
   showOpenAppAd() => PreloadGoogleAds.instance.showOpenApp();
 
   /// Show Interstitial Ad with callback
-  showInterAd() => PreloadGoogleAds.instance.showInterstitialAd(
+  showInterstitialAd() => PreloadGoogleAds.instance.showInterstitialAd(
     callBack: (ad, error) {
       if (ad != null) {
-        debugPrint("Inter AD loaded successfully!");
+        debugPrint("Interstitial AD loaded successfully!");
         debugPrint(ad.adUnitId);
       } else {
-        debugPrint("Inter Ad failed to load: ${error?.message}");
+        debugPrint("Interstitial Ad failed to load: ${error?.message}");
       }
     },
   );
@@ -180,9 +181,9 @@ class _HomeViewState extends State<HomeView> {
   showRewardedAd() => PreloadGoogleAds.instance.showRewardedAd(
     callBack: (ad, error) {
       if (ad != null) {
-        debugPrint("Ad loaded successfully!");
+        debugPrint("Reward Ad loaded successfully!");
       } else {
-        debugPrint("Ad failed to load: ${error?.message}");
+        debugPrint("Reward Ad failed to load: ${error?.message}");
       }
     },
     onReward: (ad, reward) {

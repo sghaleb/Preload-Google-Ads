@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../preload_google_ads.dart';
 
 /// A counter to track the number of native ads shown.

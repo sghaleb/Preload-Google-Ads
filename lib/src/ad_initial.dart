@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../preload_google_ads.dart';
 
 /// Singleton wrapper class to manage ad interactions via [AdManager].
@@ -50,7 +52,7 @@ class PreloadGoogleAds {
   /// Displays an interstitial ad.
   /// Returns the [InterstitialAd] or [AdError] through the [callBack].
   void showInterstitialAd({
-    required Function(InterstitialAd? ad, AdError? error) callBack,
+    required void Function(InterstitialAd? ad, AdError? error) callBack,
   }) {
     return _adManager.showInterstitialAd(callBack: callBack);
   }
