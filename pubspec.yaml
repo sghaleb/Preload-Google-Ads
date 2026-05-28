@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter              # Core Flutter dependency
-  google_mobile_ads: ^6.0.0   # Google Mobile Ads SDK for Flutter (official package)
+  google_mobile_ads: ^8.0.0   # Google Mobile Ads SDK for Flutter (official package)
 
 dev_dependencies:
   flutter_test:
