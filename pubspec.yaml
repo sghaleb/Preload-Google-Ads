@@ -4,18 +4,17 @@ version: 1.0.0  # Semantic versioning — update this with each release
 homepage: https://github.com/bhx20/Preload-Google-Ads  # Link to your plugin's GitHub repo or docs
 
 environment:
-  sdk: ">=3.6.0 <4.0.0"       # Specifies Dart SDK compatibility
-  flutter: ">=3.3.0"          # Minimum Flutter SDK version required
+  sdk: ">=3.10.0"       # Specifies Dart SDK compatibility
 
 dependencies:
   flutter:
     sdk: flutter              # Core Flutter dependency
-  google_mobile_ads: ^6.0.0   # Google Mobile Ads SDK for Flutter (official package)
+  google_mobile_ads: ^8.0.0   # Google Mobile Ads SDK for Flutter (official package)
 
 dev_dependencies:
   flutter_test:
     sdk: flutter              # Used for writing tests
-  flutter_lints: ^5.0.0       # Enforces recommended linting rules for clean code
+  flutter_lints: ^6.0.0       # Enforces recommended linting rules for clean code
 
 flutter:
   plugin:
